@@ -10,7 +10,7 @@
       name="description"
       content="나를 이해하고, 나만의 방식으로 변화하는 자기이해 생활습관 앱"
     />
-    <title>온도 — 나를 이해하고, 나만의 방식으로 변화하기</title>
+    <title>MY OWN QUEST — 나만의 세계를 발견하는 중</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,25 +24,25 @@
       <aside class="sidebar">
         <a class="brand" href="#" aria-label="온도 홈">
           <span class="brand-mark"><span></span><span></span><span></span></span>
-          <span>온도</span>
+          <span>MY OWN QUEST</span>
         </a>
         <p class="side-label">나의 공간</p>
         <nav class="main-nav" aria-label="주요 메뉴">
           <button class="nav-item active" data-view="today">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="3"></rect><path d="M8 2.8v3.4M16 2.8v3.4M3.5 9.5h17M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"></path></svg>
-            <span>오늘 로그</span>
+            <span>탐험</span>
           </button>
           <button class="nav-item" data-view="insights">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V12M10 19.5V5M16 19.5v-9M22 19.5H2"></path><path d="m3.5 9 6-5 5 4 6-5"></path></svg>
-            <span>패턴</span>
+            <span>기록</span>
           </button>
           <button class="nav-item" data-view="change">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8.5-4.8-8.5-11.2A4.8 4.8 0 0 1 12 7.1a4.8 4.8 0 0 1 8.5 2.7C20.5 16.2 12 21 12 21Z"></path><path d="M12 7v7m-3-3h6"></path></svg>
-            <span>미션</span>
+            <span>퀘스트</span>
           </button>
           <button class="nav-item" data-view="conversation">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5 8 8 0 0 1-3.6-.9L4 20l1.5-4.3A7.4 7.4 0 0 1 5 12a7.5 7.5 0 1 1 15- .5Z"></path><path d="M8.5 12h.01M12.5 12h.01M16.5 12h.01"></path></svg>
-            <span>생각 정리</span>
+            <span>기억 조각</span>
           </button>
         </nav>
         <div class="sidebar-bottom">
@@ -64,8 +64,8 @@
 
       <main class="main-content">
         <header class="topbar">
-          <div class="mobile-brand"><span class="brand-mark"><span></span><span></span><span></span></span> 온도</div>
-          <div class="breadcrumb"><span>나의 공간</span><span class="crumb-slash">/</span><strong id="page-label">오늘 로그</strong></div>
+          <div class="mobile-brand"><span class="brand-mark"><span></span><span></span><span></span></span> MY OWN QUEST</div>
+          <div class="breadcrumb"><span>MY OWN QUEST</span><span class="crumb-slash">/</span><strong id="page-label">탐험</strong></div>
           <div class="topbar-right">
             <span class="date-pill"><span class="date-dot"></span><span id="today-date"></span></span>
             <button class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 바꾸기" title="다크 모드로 바꾸기">
@@ -81,12 +81,85 @@
         <section class="view active" id="view-today">
           <div class="welcome-row">
             <div>
-              <p class="eyebrow"><span class="eyebrow-line"></span> DAILY CHECK-IN</p>
-              <h1>오늘 컨디션 어때<span class="heading-period">?</span></h1>
-              <p class="welcome-copy">기분, 에너지, 한 줄 메모. 지금 상태만 빠르게 남겨봐.</p>
+              <p class="eyebrow"><span class="eyebrow-line"></span> YOUR WORLD / DAY <span id="world-day-count">01</span></p>
+              <h1>아직 지도에 없는 곳<span class="heading-period">.</span></h1>
+              <p class="welcome-copy">오늘의 선택 하나가 이 세계에 흔적을 남긴다.</p>
             </div>
-            <div class="hero-status" aria-label="오늘 기록"><span class="hero-status-label">YOUR SPACE</span><strong>01<span>/</span>DAY</strong><i></i></div>
+            <div class="hero-status" aria-label="오늘 기록">
+              <div class="hud-radar" aria-hidden="true"><span class="radar-ring"></span><span class="radar-crosshair">+</span><i class="radar-sweep"></i><b class="radar-blip"></b></div>
+              <div class="hud-readout"><span class="hero-status-label">FIELD LOG / 01</span><strong>READY<span>_</span></strong><div class="hud-meter"><i></i><i></i><i></i><i></i><i></i></div><small>DAILY SYSTEM ONLINE</small></div>
+              <span class="hud-corner" aria-hidden="true">+</span>
+            </div>
           </div>
+
+          <section class="quest-world" aria-label="나만의 모험">
+            <div class="world-art" aria-hidden="true">
+              <div class="world-moon"></div><div class="world-ridge ridge-back"></div><div class="world-ridge ridge-front"></div>
+              <div class="world-sigil">✳</div><span class="world-coordinate">N 35° 41' / UNKNOWN</span>
+              <div class="wolf-figure wolf-luna" aria-label="루나, 달의 추적자">
+                <svg viewBox="0 0 220 190" role="img" aria-label="은백색 늑대 루나">
+                  <defs><linearGradient id="luna-fur" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f4f1e9"/><stop offset=".55" stop-color="#a8adbc"/><stop offset="1" stop-color="#686d82"/></linearGradient></defs>
+                  <path d="M37 123c-21-8-27-29-20-45 3 19 14 23 25 21-12-17-7-33 4-42-5 18 2 28 17 34 19-17 42-24 73-16 20 5 31 16 42 21l27 2-17 17 10 14-29 2c-15 17-44 24-75 18-21-4-38-13-57-26Z" fill="url(#luna-fur)" stroke="#d7d9de" stroke-width="2"/>
+                  <path d="m60 89-5-45 32 29m58-4 18-38 7 52" fill="#c6c5d0" stroke="#e1dfeb" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="m67 72-3-17 14 14m85-1 8-17 1 24" fill="#4a435d"/>
+                  <path d="M120 89c10-8 22-8 32-2" fill="none" stroke="#4a3f59" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M122 91h11" stroke="#bf8dff" stroke-width="4" stroke-linecap="round"/>
+                  <path d="m184 103 20 7-18 7" fill="#8b8791"/><path d="M100 152v22m29-21v24m22-27v24" stroke="#a8adbc" stroke-width="12" stroke-linecap="round"/>
+                  <path d="m80 68 9 10" stroke="#554267" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span class="wolf-name">LUNA</span><small>달의 추적자 · 집중의 감각</small>
+              </div>
+              <div class="wolf-figure wolf-raven" aria-label="레이븐, 어둠의 사냥꾼">
+                <svg viewBox="0 0 220 190" role="img" aria-label="흑회색 늑대 레이븐">
+                  <defs><linearGradient id="raven-fur" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#64717c"/><stop offset=".5" stop-color="#303c4a"/><stop offset="1" stop-color="#171f2b"/></linearGradient></defs>
+                  <path d="M37 123c-21-8-27-29-20-45 3 19 14 23 25 21-12-17-7-33 4-42-5 18 2 28 17 34 19-17 42-24 73-16 20 5 31 16 42 21l27 2-17 17 10 14-29 2c-15 17-44 24-75 18-21-4-38-13-57-26Z" fill="url(#raven-fur)" stroke="#8292a2" stroke-width="2"/>
+                  <path d="m60 89-5-45 32 29m58-4 18-38 7 52" fill="#384454" stroke="#718195" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="m67 72-3-17 14 14m85-1 8-17 1 24" fill="#1d2633"/>
+                  <path d="M116 88c13-9 27-9 38-1" fill="none" stroke="#111923" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M121 91h12" stroke="#68d9ff" stroke-width="4" stroke-linecap="round"/>
+                  <path d="m184 103 20 7-18 7" fill="#202936"/><path d="M100 152v22m29-21v24m22-27v24" stroke="#354250" stroke-width="12" stroke-linecap="round"/>
+                  <path d="m142 88 8 8-11 5" fill="none" stroke="#a6b0bd" stroke-width="2"/>
+                </svg>
+                <span class="wolf-name">RAVEN</span><small>어둠의 사냥꾼 · 도전 본능</small>
+              </div>
+              <span class="world-ground"></span>
+              <span class="world-scanline"></span>
+            </div>
+            <div class="world-overlay">
+              <span class="world-kicker" id="world-chapter">CHAPTER 01 · 잊힌 숲</span>
+              <h2>문이 하나 열려 있다.<br /><span>안쪽은 아직 아무도 모른다.</span></h2>
+              <p>루나와 레이븐이 너를 기다린다. 어디로 갈지는 네가 정해.</p>
+              <button class="world-enter" id="world-question-button">문 가까이 가기 <span>↗</span></button>
+              <p class="world-whisper hidden" id="world-whisper" aria-live="polite"></p>
+              <div class="world-progress-line"><span id="world-level">LVL 01</span><i><b id="world-progress-bar"></b></i><strong id="world-xp-label">0 XP</strong></div>
+            </div>
+            <span class="world-frame frame-top">FIELD 001</span><span class="world-frame frame-bottom">NO MAP · NO RULES</span>
+          </section>
+
+          <div class="adventure-grid">
+            <article class="card fate-card">
+              <div class="card-heading"><div><span class="step-label">FATE SIGNAL / 골라서 시작</span><h2>오늘, 어떤 길을 열까?</h2></div><span class="time-estimate">선택은 자유</span></div>
+              <p class="fate-description" id="fate-description">세 갈래 길이 나타났다. 어느 쪽이든 네 선택이야.</p>
+              <div class="fate-options" id="fate-options"></div>
+              <div class="active-quest hidden" id="active-quest">
+                <div class="active-quest-mark">!</div><div class="active-quest-copy"><span>ACTIVE QUEST</span><strong id="active-quest-title"></strong><small id="active-quest-detail"></small></div>
+                <button class="quest-complete" id="complete-quest">완료 <span>+20 XP</span></button>
+              </div>
+              <button class="quest-custom-link" id="quest-custom-link" data-go="change">직접 퀘스트 만들기 <span>＋</span></button>
+            </article>
+            <article class="card map-card">
+              <div class="card-heading"><div><span class="step-label">WORLD FRAGMENTS</span><h2>지도에 생긴 균열</h2></div><span class="map-mark">⌖</span></div>
+              <div class="region-list" id="region-list"></div>
+              <div class="wolf-bond-row"><span>둘의 유대</span><div class="bond-track"><i id="wolf-bond-progress"></i></div><strong id="wolf-bond-label">0</strong></div>
+              <p class="bond-reaction" id="wolf-reaction">늑대들은 아직 말이 없다. 네가 남길 첫 흔적을 기다리는 중.</p>
+            </article>
+          </div>
+
+          <article class="card strange-question-card">
+            <div class="question-symbol">?</div>
+            <div class="strange-question-copy"><span class="step-label">UNSOLVED / 너에게만 도착한 질문</span><h2 id="strange-question">만약 네 그림자가 오늘 하루 대신 학교에 갔다면, 집에 돌아와 뭐라고 했을까?</h2><p>정답을 맞히는 질문이 아니야. 떠오르는 말이 없다면 그냥 지나가도 돼.</p></div>
+            <button class="next-clue-button" id="next-clue">다른 단서 <span>↻</span></button>
+          </article>
 
           <div class="dashboard-grid">
             <div class="left-column">
@@ -151,30 +224,30 @@
 
             <aside class="right-column">
               <article class="card change-card">
-                <div class="side-card-heading"><span class="card-icon soft-green">↗</span><span class="step-label">내가 고른 작은 변화</span></div>
+                <div class="side-card-heading"><span class="card-icon soft-green">↗</span><span class="step-label">내가 정한 길</span></div>
                 <div id="change-empty" class="change-empty">
-                  <h3>아직 정한 변화가 없어요</h3>
-                  <p>바꾸고 싶은 게 떠오르면<br />아주 작게 시작해도 괜찮아요.</p>
-                  <button class="outline-button" data-go="change">나만의 변화 정하기 <span>→</span></button>
+                    <h3>아직 네가 만든 퀘스트가 없어</h3>
+                    <p>남이 정한 미션 말고<br />네가 원하는 걸 적어도 돼.</p>
+                    <button class="outline-button" data-go="change">퀘스트 직접 만들기 <span>→</span></button>
                 </div>
                 <div id="change-active" class="change-active hidden">
-                  <p class="change-label">요즘 내가 해보고 싶은 것</p>
+                    <p class="change-label">CURRENT QUEST</p>
                   <h3 id="active-change-title"></h3>
                   <div class="change-streak"><span class="streak-icon">◷</span><span id="change-progress-label"></span></div>
-                  <button class="practice-button" id="practice-today">오늘 한번 해봤어요 <span>＋</span></button>
-                  <button class="change-edit-link" data-go="change">변화 바꾸기</button>
+                    <button class="practice-button" id="practice-today">퀘스트 완료 <span>＋</span></button>
+                    <button class="change-edit-link" data-go="change">퀘스트 수정</button>
                 </div>
               </article>
 
               <article class="card mini-game-card">
                 <div class="game-heading">
                   <span class="game-icon">✦</span>
-                  <div>                  <span class="step-label">SIDE QUEST / 30 SEC</span><h3>랜덤 미션 뽑기</h3></div>
+                  <div><span class="step-label">ODD SIGNAL / 30 SEC</span><h3>숲에서 온 짧은 신호</h3></div>
                 </div>
-                <p class="game-description">카드 하나 고르고, 30초짜리 미션 하나 클리어.</p>
-                <div class="game-doors" id="game-doors" aria-label="미션 카드 선택"></div>
+                <p class="game-description">설명은 없다. 끌리는 흔적 하나를 건드려 봐.</p>
+                <div class="game-doors" id="game-doors" aria-label="숲의 흔적 선택"></div>
                 <div class="game-result hidden" id="game-result" aria-live="polite"></div>
-                <button class="game-again hidden" id="game-again">다른 미션 뽑기 <span>↻</span></button>
+                <button class="game-again hidden" id="game-again">다른 흔적 살피기 <span>↻</span></button>
               </article>
 
               <article class="card week-card">
@@ -197,9 +270,9 @@
 
         <section class="view" id="view-insights">
           <div class="subpage-heading">
-            <p class="eyebrow"><span class="eyebrow-line"></span> 나의 생활 패턴</p>
-            <h1>내 기록에서 발견한 것</h1>
-            <p class="welcome-copy">기록이 충분해졌을 때만, 실제로 보이는 흐름을 함께 살펴봐요.</p>
+            <p class="eyebrow"><span class="eyebrow-line"></span> FIELD NOTES</p>
+            <h1>내가 지나온 흔적</h1>
+            <p class="welcome-copy">기록에 실제로 남은 것만 보여줄게. 빈칸은 상상으로 채우지 않아.</p>
           </div>
           <div class="insight-overview">
             <article class="card insight-chart-card">
@@ -226,67 +299,67 @@
 
         <section class="view" id="view-change">
           <div class="subpage-heading">
-            <p class="eyebrow"><span class="eyebrow-line"></span> 나의 작은 변화</p>
-            <h1>바꾸고 싶은 게 있나요?</h1>
-            <p class="welcome-copy">누군가 정해주는 목표가 아니라, 내가 원하는 방향을 골라봐요.</p>
+            <p class="eyebrow"><span class="eyebrow-line"></span> QUEST BOARD</p>
+            <h1>네가 정하는 퀘스트</h1>
+            <p class="welcome-copy">공부든 쉬는 일이든 상관없어. 직접 쓰거나, 선택지를 고르거나.</p>
           </div>
           <div class="change-layout">
             <article class="card change-form-card">
-              <span class="step-label">나에게 맞는 작은 실천</span>
-              <h2>어떤 변화를 시작해 볼까요?</h2>
-              <p class="change-description">큰 목표보다 오늘 해볼 수 있는 행동을 골라보세요. 언제든 바꿔도 괜찮아요.</p>
+              <span class="step-label">MAKE YOUR OWN QUEST</span>
+              <h2>이번에 해볼 일은?</h2>
+              <p class="change-description">완벽하게 끝낼 필요 없어. 시작하고 싶은 만큼만 써도 돼.</p>
               <div class="suggestion-list" id="suggestion-list">
-                <button class="suggestion-chip" data-suggestion="잠들기 전 휴대폰을 5분 일찍 내려놓기"><span>🌙</span> 잠들기 전 휴대폰을 5분 일찍 내려놓기</button>
-                <button class="suggestion-chip" data-suggestion="공부를 시작하기 전에 책상에 앉아보기"><span>📖</span> 공부 시작 전에 책상에 앉아보기</button>
-                <button class="suggestion-chip" data-suggestion="아침에 물 한 잔 마시기"><span>☀</span> 아침에 물 한 잔 마시기</button>
+                <button class="suggestion-chip" data-suggestion="수학 문제 딱 한 문제만 읽어보기"><span>01</span> 수학 문제 딱 한 문제만 읽어보기</button>
+                <button class="suggestion-chip" data-suggestion="영어 단어 다섯 개 훑어보기"><span>02</span> 영어 단어 다섯 개 훑어보기</button>
+                <button class="suggestion-chip" data-suggestion="샤워하고 나서 책상 앞에 2분 앉기"><span>03</span> 샤워하고 나서 책상 앞에 2분 앉기</button>
               </div>
-              <label class="checkin-field change-input-label" for="change-input"><span class="field-title">내가 고른 행동</span><input id="change-input" class="text-input" maxlength="90" placeholder="예: 집에 오면 5분만 책상 정리하기" /></label>
-              <button class="primary-button change-save-button" id="save-change">이 행동을 해볼래요 <span>→</span></button>
-              <button class="remove-change hidden" id="remove-change">지금은 변화를 정하지 않을래요</button>
+              <label class="checkin-field change-input-label" for="change-input"><span class="field-title">직접 만들기</span><input id="change-input" class="text-input" maxlength="90" placeholder="네가 하고 싶은 걸 한 줄로" /></label>
+              <button class="primary-button change-save-button" id="save-change">이 퀘스트로 가기 <span>→</span></button>
+              <button class="remove-change hidden" id="remove-change">퀘스트 내려놓기</button>
             </article>
             <aside class="card change-guide-card">
               <span class="guide-icon">✳</span>
-              <span class="step-label">기억해 주세요</span>
-              <h3>작게 시작해도,<br />아무 때나 다시 시작해도 돼요.</h3>
-              <p>실천을 놓친 날은 실패가 아니에요. 무엇이 어려웠는지 알아가는 것도 변화의 일부예요.</p>
+              <span class="step-label">RULE ZERO</span>
+              <h3>이 세계에는<br />정답 루트가 없어.</h3>
+              <p>퀘스트를 바꾸거나 쉬어도 돼. 네 세계니까 네가 규칙을 정해.</p>
               <div class="guide-rule"></div>
               <div class="guide-stat"><span>이번 주 실천</span><strong id="change-week-count">0회</strong></div>
               <div class="guide-stat"><span>전체 실천 기록</span><strong id="change-total-count">0회</strong></div>
             </aside>
           </div>
-          <article class="card practice-history-card"><div class="card-heading"><div><span class="step-label">부담 없이 쌓아가는 기록</span><h2>해본 날들</h2></div></div><div id="practice-history-list" class="practice-history-list"></div></article>
+          <article class="card practice-history-card"><div class="card-heading"><div><span class="step-label">QUEST LOG</span><h2>남긴 흔적</h2></div></div><div id="practice-history-list" class="practice-history-list"></div></article>
         </section>
 
         <section class="view" id="view-conversation">
           <div class="subpage-heading conversation-heading">
-            <p class="eyebrow"><span class="eyebrow-line"></span> 생각 정리</p>
-            <h1>생각을 천천히 풀어봐요</h1>
-            <p class="welcome-copy">오늘 있었던 일이나 마음에 걸리는 것, 편한 만큼 이야기해 주세요.</p>
+            <p class="eyebrow"><span class="eyebrow-line"></span> LOST FRAGMENTS</p>
+            <h1>기억 조각을 맞춰봐</h1>
+            <p class="welcome-copy">이 세계가 왜 너를 찾아왔는지, 아직 아무도 몰라.</p>
           </div>
           <div class="conversation-layout">
             <article class="card chat-card">
               <div class="chat-header">
                 <div class="chat-avatar">✳</div>
-                <div><strong id="chat-name">생각 정리</strong><small>혼자 생각을 풀거나 질문을 골라봐요</small></div>
+                <div><strong id="chat-name">기억 조각</strong><small>답을 정해두지 않은 질문들이 남아 있어</small></div>
                 <span class="online-dot"></span>
               </div>
               <div class="chat-messages" id="chat-messages" aria-live="polite">
-                <div class="message assistant-message"><div class="message-avatar">✳</div><div class="message-bubble"><p>오늘 마음에 남은 장면이 있나요? 짧게 적어도 좋고, 옆에 있는 질문부터 골라도 괜찮아요.</p><span class="message-time">지금</span></div></div>
+                <div class="message assistant-message"><div class="message-avatar">✳</div><div class="message-bubble"><p>기억나지 않는 장면이 하나 있어. 네가 이 숲에 처음 온 날, 가장 먼저 들린 소리는 뭐였을까?</p><span class="message-time">지금</span></div></div>
               </div>
               <div class="chat-suggestions"><span>이런 이야기도 좋아요</span><button data-chat-suggestion="요즘 자꾸 미루게 돼">요즘 자꾸 미루게 돼</button><button data-chat-suggestion="내 생활 패턴을 알고 싶어">내 생활 패턴을 알고 싶어</button></div>
               <form class="chat-compose" id="chat-form"><textarea id="chat-input" rows="1" maxlength="500" placeholder="하고 싶은 이야기를 적어보세요"></textarea><button type="submit" aria-label="메시지 보내기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 3-8-3-8Zm3 8h14"></path></svg></button></form>
             </article>
             <aside class="conversation-aside">
-              <article class="card reflection-card"><span class="step-label">나의 기록</span><h3>기록에서 질문 하나 꺼내기</h3><div id="chat-context" class="chat-context"></div><button class="text-button" id="context-question">이야기 이어가기 <span>→</span></button></article>
+              <article class="card reflection-card"><span class="step-label">FOUND IN YOUR LOG</span><h3>네가 남긴 흔적</h3><div id="chat-context" class="chat-context"></div><button class="text-button" id="context-question">조각 하나 꺼내기 <span>→</span></button></article>
               <div class="chat-privacy"><span>⌑</span><p>대화와 기록은 이 브라우저에 저장돼요.<br />대화는 기록 기반 가이드 질문으로 이어집니다.</p></div>
             </aside>
           </div>
         </section>
 
-        <footer class="app-footer"><span>온도</span><span>나를 이해하고, 나만의 방식으로 변화하기</span></footer>
+        <footer class="app-footer"><span>MY OWN QUEST</span><span>YOUR LIFE. YOUR WORLD. YOUR RULES.</span></footer>
       </main>
       <nav class="mobile-nav" aria-label="모바일 메뉴">
-        <button class="active" data-view="today"><span>⌂</span>오늘</button><button data-view="insights"><span>▥</span>패턴</button><button data-view="change"><span>↗</span>변화</button><button data-view="conversation"><span>◌</span>생각</button>
+        <button class="active" data-view="today"><span>⌂</span>탐험</button><button data-view="insights"><span>▥</span>기록</button><button data-view="change"><span>↗</span>퀘스트</button><button data-view="conversation"><span>◌</span>기억</button>
       </nav>
     </div>
 

@@ -1,30 +1,35 @@
 (() => {
   const STORAGE_KEY = "ondo-self-reflection-v1";
   const prompts = [
-    "오늘 하루 중, 생각보다 덜 힘들었던 순간이 있었나요?",
-    "오늘 나를 조금 편하게 해준 건 무엇이었나요?",
-    "미루고 싶었지만 결국 시작했던 일이 있다면, 시작 직전에 뭐가 달랐나요?",
-    "오늘 에너지가 조금이라도 올라간 순간은 언제였나요?",
-    "오늘의 나에게 내일 하나만 부탁한다면, 어떤 작은 부탁일까요?",
-    "오늘 계획과 실제가 달랐던 순간에서 발견한 게 있나요?",
-    "오늘은 무엇을 하지 않았을 때 오히려 괜찮았나요?"
+    "네 그림자가 오늘 하루 대신 학교에 갔다면, 집에 와서 뭐라고 했을까?",
+    "오늘 있었던 일 중 영화로 만들면 제목이 가장 이상해질 장면은?",
+    "오늘의 기분을 날씨 말고 '장소'로 표현하면 어디에 가까울까?",
+    "내일의 네가 오늘의 너에게 암호 하나를 남긴다면 뭐라고 쓸까?",
+    "오늘 하루를 괴물 하나로 그린다면, 어떤 약점이 있을까?",
+    "오늘의 너에게 능력을 하나 붙일 수 있다면, 쓸모없어 보여도 어떤 능력이 좋을까?",
+    "오늘 있었던 일 중 나중에 떠올리면 웃길 것 같은 건 뭐야?"
   ];
   const questionPool = [
-    "오늘 하루 중 생각보다 괜찮았던 순간이 있었나요?",
-    "시작하기 직전에 가장 크게 걸렸던 건 무엇이었나요?",
-    "지금 바꾼다면 가장 부담이 적은 한 가지는 뭘까요?",
-    "그 일을 하기 조금 더 쉬운 시간이나 장소가 있을까요?",
-    "오늘 나를 도와준 사람이나 환경이 있었나요?",
-    "그때와 비슷한 상황이 다시 온다면, 무엇을 다르게 해보고 싶나요?",
-    "지금은 해결보다 잠깐 쉬는 게 더 필요한 순간일까요?"
+    "네 그림자가 오늘 하루 대신 학교에 갔다면, 돌아와서 뭐라고 했을까?",
+    "오늘 하루에 숨겨진 보스가 있었다면, 정체는 사람이었을까 상황이었을까?",
+    "네가 자주 미루는 일에 별명을 붙인다면 뭐라고 부를래?",
+    "이 세계의 늑대가 네 가방을 열어본다면 가장 먼저 뭘 발견할까?",
+    "오늘의 기분을 소리로만 표현한다면 어떤 소리일까?",
+    "내일의 네가 오늘의 너에게 암호 하나를 남긴다면 뭐라고 쓸까?",
+    "요즘 네 머릿속에서 가장 시끄럽게 떠드는 생각은 뭐야?",
+    "오늘 있었던 일 중 영화로 만들면 제목이 가장 이상해질 장면은?",
+    "네가 하루 동안 투명해진다면 제일 먼저 어디로 가고 싶어?",
+    "오늘의 에너지를 게임 배터리로 바꾸면 몇 퍼센트쯤 남았어?",
+    "누가 네 하루를 관찰했다면, 네가 몰랐던 어떤 습관을 먼저 알아챌까?",
+    "지금 네 앞에 문이 생겼다면, 열기 전에 문에 어떤 질문을 할래?"
   ];
   const gameDeck = [
-    { symbol: "↗", label: "시작", title: "미션: 첫 페이지", text: "공책이나 할 일 목록을 열고, 첫 줄만 읽어봐. 거기까지면 클리어." },
-    { symbol: "⌁", label: "리셋", title: "미션: 30초 리셋", text: "자리에서 일어나 어깨를 한 번 돌리고 물 한 모금 마시기. 몸이 깨어나면 완료." },
-    { symbol: "▦", label: "정리", title: "미션: 한 칸 정리", text: "책상이나 가방에서 물건 하나만 제자리로. 하나만 해도 미션 완료." },
-    { symbol: "◷", label: "집중", title: "미션: 타이머 스타트", text: "미루던 일에 30초 타이머를 켜고 손대기. 계속할지는 30초 뒤에 정해도 돼." },
-    { symbol: "✎", label: "메모", title: "미션: 머릿속 비우기", text: "지금 신경 쓰이는 것 하나를 메모장에 적기. 해결은 나중에 해도 괜찮아." },
-    { symbol: "◌", label: "휴식", title: "미션: 화면 멈춤", text: "휴대폰 화면을 30초만 내려놓고 눈을 멀리 두기. 짧게 쉬어도 충분해." }
+    { symbol: "∴", label: "세 개의 점", title: "흔적 01", text: "나무껍질에 점 세 개가 새겨져 있어. 루나는 그게 별자리라고 하고, 레이븐은 누군가의 암호라고 해." },
+    { symbol: "◒", label: "뒤집힌 달", title: "흔적 02", text: "연못에 달이 거꾸로 비쳐. 그런데 하늘에는 달이 없어. 물속을 들여다볼까?" },
+    { symbol: "⌁", label: "낯선 발자국", title: "흔적 03", text: "늑대 발자국 옆에 네 운동화 자국이 하나 더 있어. 이 숲에 먼저 온 적이 있었을까?" },
+    { symbol: "⊙", label: "숲의 눈", title: "흔적 04", text: "덤불 사이에서 빛 두 개가 깜박였어. 무섭다기보다 네가 아는 눈빛 같아." },
+    { symbol: "⟡", label: "깨진 별", title: "흔적 05", text: "별 조각 뒷면에 네 글씨와 비슷한 글자가 있어. 읽을 수는 없지만 이상하게 낯설지 않아." },
+    { symbol: "↟", label: "갈라진 길", title: "흔적 06", text: "갈림길은 둘인데 그림자는 셋이야. 셋째 그림자는 어느 쪽으로 가고 있을까?" }
   ];
 
   const loadState = () => {
@@ -37,16 +42,25 @@
         records: saved.records && typeof saved.records === "object" ? saved.records : {},
         change: saved.change && typeof saved.change.title === "string" ? saved.change : null,
         practices: Array.isArray(saved.practices) ? saved.practices : [],
+        questionHistory: Array.isArray(saved.questionHistory) ? saved.questionHistory : [],
         messages: Array.isArray(saved.messages) ? saved.messages : []
       };
     } catch (error) {
       console.error("저장된 기록을 불러오지 못했습니다.", error);
-      return { aiName: "", theme: "dark", onboardingSeen: false, records: {}, change: null, practices: [], messages: [] };
+      return { aiName: "", theme: "dark", onboardingSeen: false, records: {}, change: null, practices: [], questionHistory: [], messages: [] };
     }
   };
   let state = loadState();
   let toastTimer;
   let activeGameCards = [];
+  let whisperIndex = -1;
+  const doorWhispers = [
+    "문 안쪽에서 네 목소리가 들렸다. 그런데 오늘은 아직 아무 말도 하지 않았는데.",
+    "루나가 문을 긁었다. 잠시 뒤, 문 안쪽에서도 똑같은 소리가 돌아왔다.",
+    "문틈으로 오래된 시험지 한 장이 밀려 나왔다. 네가 아직 풀지 않은 문제였다.",
+    "레이븐이 한 발 물러섰다. 처음으로, 무언가를 경계하는 것처럼.",
+    "문에 새겨진 이름은 지워져 있다. 이상하게도 네가 지운 것 같은 기분이 든다."
+  ];
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -113,10 +127,120 @@
     $("#game-again").classList.add("hidden");
   }
 
+  function getFateOptions() {
+    const record = state.records[todayKey()];
+    const energy = Number(record?.energy || 0);
+    if (energy > 0 && energy <= 2) {
+      return [
+        { title: "초소에 잠깐 앉기", detail: "물 한 모금 마시고 2분 쉬기", symbol: "⌁" },
+        { title: "첫 조각만 건드리기", detail: "미뤄둔 일의 첫 줄만 읽기", symbol: "↗" },
+        { title: "오늘은 흔적 남기기", detail: "지금 상태를 한 줄로 기록하기", symbol: "✎" }
+      ];
+    }
+    return [
+      { title: "첫 페이지의 방", detail: "공부할 것 하나를 펴고 5분만 보기", symbol: "01" },
+      { title: "갈라진 길", detail: "지금 신경 쓰이는 일의 첫 동작 해보기", symbol: "02" },
+      { title: "이름 없는 길", detail: "네가 직접 오늘의 미션 정하기", symbol: "??", custom: true }
+    ];
+  }
+
+  function updateWorldProgress() {
+    const xp = state.practices.reduce((total, entry) => total + (Number(entry.xp) || 20), 0);
+    const bond = Math.min(100, state.practices.length * 8);
+    const regions = [
+      { name: "잊힌 숲", detail: "네가 처음 발을 디딘 곳", threshold: 0, symbol: "✳" },
+      { name: "얼어붙은 산맥", detail: "60 XP · 흔적이 모이면 열림", threshold: 60, symbol: "⌁" },
+      { name: "그림자 성", detail: "140 XP · 아직 문이 잠겨 있음", threshold: 140, symbol: "◇" },
+      { name: "별빛 균열", detail: "280 XP · 지도 밖의 장소", threshold: 280, symbol: "⟡" }
+    ];
+    const currentRegion = [...regions].reverse().find((region) => xp >= region.threshold);
+    const nextRegion = regions.find((region) => xp < region.threshold);
+    const regionIndex = regions.indexOf(currentRegion);
+    const world = $(".quest-world");
+    world.dataset.region = String(regionIndex);
+    $("#world-chapter").textContent = `CHAPTER ${String(regionIndex + 1).padStart(2, "0")} · ${currentRegion.name}`;
+    $("#world-level").textContent = `LVL ${String(Math.floor(xp / 60) + 1).padStart(2, "0")}`;
+    $("#region-list").innerHTML = regions.map((region) => {
+      const unlocked = xp >= region.threshold;
+      const current = currentRegion.name === region.name;
+      return `<div class="region-item${unlocked ? " unlocked" : " locked"}${current ? " current" : ""}"><span class="region-symbol">${unlocked ? region.symbol : "?"}</span><span class="region-copy"><strong>${region.name}</strong><small>${unlocked ? (current ? "현재 위치 · 지도에 흔적이 생겼다" : "발견됨") : region.detail}</small></span><span class="region-state">${current ? "HERE" : unlocked ? "OPEN" : "LOCKED"}</span></div>`;
+    }).join("");
+    $("#world-xp-label").textContent = `${xp} XP`;
+    $("#world-progress-bar").style.width = nextRegion
+      ? `${Math.max(4, Math.min(100, ((xp - currentRegion.threshold) / (nextRegion.threshold - currentRegion.threshold)) * 100))}%`
+      : "100%";
+    $("#wolf-bond-progress").style.width = `${bond}%`;
+    $("#wolf-bond-label").textContent = `${bond}%`;
+    const days = new Set([...Object.keys(state.records), ...state.practices.map((entry) => entry.date)].filter(Boolean)).size;
+    $("#world-day-count").textContent = String(Math.max(1, days)).padStart(2, "0");
+    const reaction = state.practices.length === 0
+      ? "늑대들은 아직 말이 없다. 네가 남길 첫 흔적을 기다리는 중."
+      : state.practices.length === 1
+        ? "루나가 네 발자국 옆에 자기 흔적을 남겼다. 레이븐은 모른 척한다."
+        : state.practices.length < 5
+          ? "레이븐이 조금 가까이 다가왔다. 루나는 네가 다음에 어디로 갈지 이미 알고 있는 듯하다."
+          : "둘은 네가 돌아올 때마다 숲이 조금씩 달라지는 걸 알고 있다.";
+    $("#wolf-reaction").textContent = reaction;
+    world.classList.toggle("has-traces", state.practices.length > 0);
+    world.classList.toggle("deep-bond", bond >= 40);
+  }
+
+  function renderAdventure() {
+    const options = $("#fate-options");
+    const active = Boolean(state.change);
+    options.classList.toggle("hidden", active);
+    $("#active-quest").classList.toggle("hidden", !active);
+    $("#quest-custom-link").classList.toggle("hidden", active);
+    if (active) {
+      $("#active-quest-title").textContent = state.change.title;
+      $("#active-quest-detail").textContent = state.change.detail || "네가 고른 길. 어디까지 갈지는 네가 정해.";
+      $("#fate-description").textContent = "길을 골랐어. 작은 흔적 하나면 충분해.";
+    } else {
+      $("#fate-description").textContent = "세 갈래 길이 나타났다. 어느 쪽이든 네 선택이야.";
+      options.innerHTML = getFateOptions().map((option, index) =>
+        `<button class="fate-option" type="button" data-fate-index="${index}"><span class="fate-symbol">${option.symbol}</span><span class="fate-copy"><strong>${escapeHtml(option.title)}</strong><small>${escapeHtml(option.detail)}</small></span><span class="fate-arrow">↗</span></button>`
+      ).join("");
+    }
+    updateWorldProgress();
+  }
+
+  function activateQuest(title, detail) {
+    state.change = { id: `quest-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, title, detail, createdAt: todayKey() };
+    if (persist()) {
+      renderAdventure();
+      renderTodayChange();
+      showToast("새 길이 기록됐다. 네 방식대로 가면 돼.");
+    }
+  }
+
+  function completeCurrentQuest() {
+    if (!state.change) return;
+    const existing = state.practices.find((entry) => entry.changeId === state.change.id);
+    if (existing) {
+      showToast("이 퀘스트의 흔적은 이미 남겼어.");
+      return;
+    }
+    state.practices.push({
+      date: todayKey(),
+      changeId: state.change.id,
+      title: state.change.title,
+      xp: 20,
+      kind: "quest"
+    });
+    state.change = null;
+    if (persist()) {
+      renderAdventure();
+      renderChange();
+      renderTodayChange();
+      renderWeekChart();
+      showToast("흔적 +20 XP · 두 늑대가 네 쪽을 돌아봤다.");
+    }
+  }
+
   function navigate(viewName) {
     $$(".view").forEach((view) => view.classList.toggle("active", view.id === `view-${viewName}`));
     $$("[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === viewName));
-    const labels = { today: "오늘 로그", insights: "패턴", change: "미션", conversation: "생각 정리" };
+    const labels = { today: "탐험", insights: "기록", change: "퀘스트", conversation: "기억 조각" };
     $("#page-label").textContent = labels[viewName] || labels.today;
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (viewName === "insights") renderInsights();
@@ -168,11 +292,11 @@
       $("#change-input").value = state.change.title;
       $("#active-change-title").textContent = state.change.title;
       const count = state.practices.filter((entry) => entry.changeId === state.change.id).length;
-      $("#change-progress-label").textContent = `지금까지 ${count}번 해봤어요`;
-      $("#save-change").textContent = "변화 내용 수정하기";
+      $("#change-progress-label").textContent = `${count}번 흔적을 남겼어`;
+      $("#save-change").innerHTML = '퀘스트 내용 수정 <span>→</span>';
     } else {
       $("#change-input").value = "";
-      $("#save-change").innerHTML = '이 행동을 해볼래요 <span>→</span>';
+      $("#save-change").innerHTML = '이 퀘스트로 가기 <span>→</span>';
     }
     const weekStart = new Date();
     weekStart.setDate(weekStart.getDate() - 6);
@@ -182,7 +306,7 @@
     const recent = [...state.practices].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 8);
     $("#practice-history-list").innerHTML = recent.length
       ? recent.map((entry) => `<div class="practice-row"><span class="practice-check">✓</span><div><strong>${escapeHtml(entry.title)}</strong></div><time>${formatDate(entry.date)}</time></div>`).join("")
-      : '<p class="practice-empty">해본 날이 생기면 여기에 기록돼요. 아직 없어도 괜찮아요.</p>';
+      : '<p class="practice-empty">아직 지도에 흔적이 없어. 아무 때나 시작해도 돼.</p>';
   }
 
   function renderInsights() {
@@ -251,7 +375,7 @@
         const detail = [record.mood && `기분은 ${record.mood}`, record.sleep && `수면 ${record.sleep}시간`, record.studyStart && `공부 시작 ${record.studyStart}`, record.note && `“${escapeHtml(record.note)}”`].filter(Boolean).join(" · ");
         return `<div class="history-row"><time>${formatDate(key, { month: "short", day: "numeric", weekday: "short" })}</time><p>${detail ? escapeHtml(detail) : "간단히 오늘을 돌아봤어요."}</p></div>`;
       }).join("")
-      : '<p class="history-empty">아직 기록이 없어요. 오늘을 돌아보는 것부터 시작해도 괜찮아요.</p>';
+      : '<p class="history-empty">아직 기록이 없어. 네가 남길 첫 흔적을 기다리는 중.</p>';
   }
 
   function renderChatContext() {
@@ -278,31 +402,46 @@
   }
 
   function chooseQuestion() {
-    const asked = state.messages.filter((message) => message.role === "assistant").map((message) => message.question).filter(Boolean);
-    const unused = questionPool.filter((question) => !asked.slice(-4).includes(question));
-    return unused[Math.floor(Math.random() * unused.length)] || questionPool[Math.floor(Math.random() * questionPool.length)];
+    const unused = questionPool.filter((question) => !state.questionHistory.slice(-5).includes(question));
+    const question = unused[Math.floor(Math.random() * unused.length)] || questionPool[Math.floor(Math.random() * questionPool.length)];
+    state.questionHistory.push(question);
+    state.questionHistory = state.questionHistory.slice(-12);
+    return question;
+  }
+
+  function chooseStrangeQuestion() {
+    const record = state.records[todayKey()];
+    const creativePool = record?.energy && Number(record.energy) <= 2
+      ? questionPool.filter((question) => /그림자|소리|암호|투명|문에/.test(question))
+      : questionPool;
+    const unused = creativePool.filter((question) => !state.questionHistory.slice(-5).includes(question));
+    const question = unused[Math.floor(Math.random() * unused.length)] || questionPool[Math.floor(Math.random() * questionPool.length)];
+    state.questionHistory.push(question);
+    state.questionHistory = state.questionHistory.slice(-12);
+    $("#strange-question").textContent = question;
+    persist();
   }
 
   function buildReply(text) {
     const lower = text.toLowerCase();
-    const nameIntro = state.aiName ? `${state.aiName}야. ` : "";
+    const nameIntro = state.aiName ? `${state.aiName}가 그 말을 기억해둘게. ` : "";
     const record = state.records[todayKey()];
     let reflection;
     if (/미루|시작|공부|숙제/.test(lower)) {
-      reflection = "해야 할 일을 미루는 데에는 의지 말고도 시작의 크기나 그때의 에너지처럼 여러 이유가 있을 수 있어요. 어느 부분이 가장 크게 느껴졌는지부터 같이 살펴봐도 좋겠어요.";
+      reflection = "레이븐이 네 말에 귀를 세웠어. 시작이 막힐 땐 일 전체보다 첫 동작이 너무 흐릿할 때도 있어. 딱 2분짜리 첫 동작으로 줄인다면 뭐가 제일 작을까?";
     } else if (/힘들|버거|불안|걱정|답답|속상|슬프|지쳐/.test(lower)) {
-      reflection = "그렇게 느낄 만한 일이 있었나 봐요. 지금 당장 해결책을 찾지 않아도 괜찮아요. 마음에 남은 상황을 조금 더 이야기해 줄 수 있나요?";
+      reflection = "루나는 대답을 재촉하지 않아. 지금 그 기분을 만든 장면이 떠오르면 말해줘. 아직 정리 안 된 말이어도 괜찮아.";
     } else if (/패턴|습관|생활|잠|수면|아침|늦게/.test(lower)) {
       const records = sortedRecords();
       const withSleep = records.filter(([, item]) => item.sleep !== "" && item.sleep != null);
       if (withSleep.length >= 3) {
         const avg = withSleep.reduce((sum, [, item]) => sum + Number(item.sleep), 0) / withSleep.length;
-        reflection = `수면 시간을 적어준 ${withSleep.length}일의 평균은 약 ${avg.toFixed(1)}시간이에요. 기록만으로 원인을 정할 수는 없지만, 잠들기 전이나 일어난 뒤의 느낌도 함께 적으면 나에게 맞는 흐름을 더 잘 볼 수 있어요.`;
+        reflection = `네가 직접 적은 ${withSleep.length}일의 수면 기록은 평균 ${avg.toFixed(1)}시간이야. 이유까지는 이 기록만으로 알 수 없어. 잠든 다음 날의 느낌도 같이 남겨볼까?`;
       } else {
-        reflection = "생활 패턴을 알려면 기록이 조금 더 필요해요. 지금까지 확인할 수 있는 정보만으로 단정하지 않을게요. 수면이나 하루의 시작 중 어떤 부분이 가장 궁금한가요?";
+        reflection = "이 숲엔 아직 네 생활 패턴을 읽을 만큼 흔적이 없어. 더 적어주기 전엔 추측하지 않을게. 잠, 아침, 공부 시작 중 어디가 제일 궁금해?";
       }
     } else {
-      reflection = "그 이야기를 꺼내줘서 고마워요. 한 가지 답으로 정하지 않고, 지금의 경험을 더 들여다보고 싶어요.";
+      reflection = "루나는 조용히 듣고 있고, 레이븐은 네가 한 말에서 단서를 찾는 중이야. 아직 답을 정하지 않아도 돼.";
     }
     const question = chooseQuestion();
     const todayContext = record?.mood ? ` 오늘은 기분이 '${record.mood}'라고 남겨줬는데, 그 느낌과도 이어져 있을까요?` : "";
@@ -343,6 +482,7 @@
       $("#save-button-label").textContent = "로그 수정";
       $("#save-hint").textContent = "언제든 다시 수정할 수 있어.";
       renderWeekChart();
+      renderAdventure();
       showToast("오늘 로그 저장 완료.");
     }
   });
@@ -362,6 +502,30 @@
   });
   $("#game-again").addEventListener("click", startGame);
 
+  $("#fate-options").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-fate-index]");
+    if (!button) return;
+    const option = getFateOptions()[Number(button.dataset.fateIndex)];
+    if (!option) return;
+    if (option.custom) {
+      navigate("change");
+      $("#change-input").focus();
+      return;
+    }
+    activateQuest(option.title, option.detail);
+  });
+  $("#complete-quest").addEventListener("click", completeCurrentQuest);
+  $("#world-question-button").addEventListener("click", () => {
+    let next = Math.floor(Math.random() * doorWhispers.length);
+    if (doorWhispers.length > 1 && next === whisperIndex) next = (next + 1) % doorWhispers.length;
+    whisperIndex = next;
+    $("#world-whisper").textContent = doorWhispers[whisperIndex];
+    $("#world-whisper").classList.remove("hidden");
+    $("#world-question-button").innerHTML = '문틈을 더 살핀다 <span>↗</span>';
+    $(".quest-world").classList.add("door-opened");
+  });
+  $("#next-clue").addEventListener("click", chooseStrangeQuestion);
+
   $$("#suggestion-list .suggestion-chip").forEach((button) => {
     button.addEventListener("click", () => {
       $("#change-input").value = button.dataset.suggestion;
@@ -376,11 +540,17 @@
       $("#change-input").focus();
       return;
     }
-    state.change = { id: state.change?.id || `change-${Date.now()}`, title, createdAt: state.change?.createdAt || todayKey() };
+    state.change = {
+      id: state.change?.id || `quest-${Date.now()}`,
+      title,
+      detail: "네가 직접 만든 퀘스트. 어디까지 할지는 네가 정해.",
+      createdAt: state.change?.createdAt || todayKey()
+    };
     if (persist()) {
       renderChange();
       renderTodayChange();
-      showToast("내가 고른 작은 변화를 저장했어요.");
+      renderAdventure();
+      showToast("네 퀘스트가 지도에 기록됐다.");
     }
   });
 
@@ -400,22 +570,13 @@
     if (persist()) {
       renderChange();
       renderTodayChange();
-      showToast("변화 목표를 지웠어요. 다시 정하고 싶을 때 시작해요.");
+      renderAdventure();
+      showToast("퀘스트를 내려놨어. 다른 길은 언제든 열려.");
     }
   });
 
   $("#practice-today").addEventListener("click", () => {
-    if (!state.change) return;
-    if (state.practices.some((entry) => entry.date === todayKey() && entry.changeId === state.change.id)) {
-      showToast("오늘 해본 기록이 이미 있어요. 충분해요.");
-      return;
-    }
-    state.practices.push({ date: todayKey(), changeId: state.change.id, title: state.change.title });
-    if (persist()) {
-      renderChange();
-      renderTodayChange();
-      showToast("해본 순간을 기록했어요. 작은 시도도 의미 있어요.");
-    }
+    completeCurrentQuest();
   });
 
   $("#chat-form").addEventListener("submit", (event) => {
@@ -502,6 +663,7 @@
   renderWeekChart();
   renderChange();
   renderTodayChange();
+  renderAdventure();
   renderInsights();
   renderChatContext();
   renderChat();
